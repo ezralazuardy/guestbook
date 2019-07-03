@@ -14,7 +14,7 @@
 			<div class="navbar-menu">
 				<div class="navbar-end">
 					<a class="navbar-item is-active">Formulir</a>
-					<a class="navbar-item" href="<?= base_url('daftar-tamu'); ?>">Daftar Tamu</a>
+					<a class="navbar-item" href="<?= base_url('daftar'); ?>">Daftar Tamu</a>
 				</div>
 			</div>
 		</div>

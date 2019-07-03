@@ -40,7 +40,7 @@
 		href="<?= base_url('assets/css/bulma/extensions/bulma-quickview.min.css'); ?>"
 		onload="javascript:this.onload=null; this.rel='stylesheet';">
 	<link type="text/css" rel="preload" as="style"
-		href="<?= base_url('assets/css/datatables/jquery.dataTables.min.css'); ?>"
+		href="<?= base_url('assets/css/bulma/extensions/bulma-dataTables.min.css'); ?>"
 		onload="javascript:this.onload=null; this.rel='stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/animate/animate.min.css'); ?>"
@@ -73,4 +73,4 @@
 	</noscript>
 	<script type="text/javascript">window.base_url = '<?= base_url(); ?>';</script>
 </head>
-<body>
+<body class="has-background-light">
