@@ -7,7 +7,7 @@ $(function() {
 		loop: true,
 		navigation: false,
 		navigationKeys: false,
-		duration: 1500,
+		duration: 1000,
 		pagination: false
 	}
 	var calendarOptions = {
@@ -17,10 +17,10 @@ $(function() {
 	bulmaCarousel.attach('.hero-carousel', carouselOptions);
 	bulmaCalendar.attach('[type="date"]', calendarOptions);
 	bulmaQuickview.attach();
-	bulmaToast.toast({
-		message: 'Hello There',
-		type: 'is-success',
-		dismissible: true,
-		animate: { in: 'fadeIn', out: 'fadeOut' }
-	});
+	// bulmaToast.toast({
+	// 	message: 'Hello There',
+	// 	type: 'is-success',
+	// 	dismissible: true,
+	// 	animate: { in: 'fadeIn', out: 'fadeOut' }
+	// });
 });
