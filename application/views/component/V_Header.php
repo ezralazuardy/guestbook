@@ -34,7 +34,16 @@
 		href="<?= base_url('assets/css/bulma/extensions/bulma-calendar.min.css'); ?>"
 		onload="javascript:this.onload=null; this.rel='stylesheet';">
 	<link type="text/css" rel="preload" as="style"
+		href="<?= base_url('assets/css/bulma/extensions/bulma-checkradio.min.css'); ?>"
+		onload="javascript:this.onload=null; this.rel='stylesheet';">
+	<link type="text/css" rel="preload" as="style"
+		href="<?= base_url('assets/css/bulma/extensions/bulma-quickview.min.css'); ?>"
+		onload="javascript:this.onload=null; this.rel='stylesheet';">
+	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/animate/animate.min.css'); ?>"
+		onload="javascript:this.onload=null; this.rel='stylesheet';">
+	<link type="text/css" rel="preload" as="style"
+		href="<?= base_url('assets/css/main.css'); ?>"
 		onload="javascript:this.onload=null; this.rel='stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/fontawesome/css/all.min.css'); ?>"
@@ -47,17 +56,16 @@
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/bulma/extensions/bulma-calendar.min.css'); ?>">
 		<link type="text/css" rel="stylesheet"
+			href="<?= base_url('assets/css/bulma/extensions/bulma-checkradio.min.css'); ?>">
+		<link type="text/css" rel="stylesheet"
+			href="<?= base_url('assets/css/bulma/extensions/bulma-quickview.min.css'); ?>">
+		<link type="text/css" rel="stylesheet"
+			href="<?= base_url('assets/css/main.css'); ?>">
+		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/animate/animate.min.css'); ?>">
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/fontawesome/css/all.min.css'); ?>">
 	</noscript>
-	<style type="text/css">
-		html { overflow: scroll; overflow-x: hidden; }
-		::-webkit-scrollbar { width: 0px; background: transparent; }
-		::-webkit-scrollbar-thumb { background: #FF0000; }
-		.slider-navigation-previous, .slider-navigation-next { display: none; }
-		.white { color: white; }
-	</style>
 	<script type="text/javascript">window.base_url = '<?= base_url(); ?>';</script>
 </head>
 <body>

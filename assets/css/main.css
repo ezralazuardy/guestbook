@@ -1,0 +1,10 @@
+html { overflow: scroll; overflow-x: hidden; }
+body::-webkit-scrollbar { width: 0px; background: transparent; }
+.slider-navigation-previous, .slider-navigation-next { display: none; }
+.white { color: white; }
+.card-content-scrollable {
+    height: 320px;
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+}
