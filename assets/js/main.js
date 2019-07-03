@@ -17,13 +17,7 @@ $(function() {
 	bulmaCarousel.attach('.hero-carousel', carouselOptions);
 	bulmaCalendar.attach('[type="date"]', calendarOptions);
 	bulmaQuickview.attach();
-	jszip.min.js
-	pdfmake.min.js
-	vfs_fonts.js
-	buttons.html5.min.js
     $('#tableDaftarTamu').DataTable({
-		dom: 'Bfrtip',
-		buttons: ['copyHtml5', 'excelHtml5', 'pdfHtml5', 'csvHtml5'],
 		language: {
 			"processing":       "Memuat data...",
 			"loadingRecords":   "Memuat...",

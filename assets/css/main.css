@@ -1,4 +1,4 @@
-html { overflow: scroll; overflow-x: hidden; }
+html { overflow: scroll; overflow-x: hidden; height: 100%; width: 100%; }
 body::-webkit-scrollbar { width: 0px; background: transparent; }
 .slider-navigation-previous, .slider-navigation-next { display: none; }
 .white { color: white; }

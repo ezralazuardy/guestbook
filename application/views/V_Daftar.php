@@ -19,7 +19,7 @@
 			</div>
 		</div>
 	</nav>
-	<div class="hero-body white" style="margin-top: 12px;">
+	<div class="hero-body white" style="margin-top: 16px;">
 		<div class="column is-6">
 			<h1 class="title is-1 white" style="margin-bottom: 32px;">Daftar Tamu<br/>BPTIK DIKBUD.</h1>
 			<h2 class="subtitle is-6 white">Berikut list tamu yang telah terdaftar di BPTIK DIKBUD.</h2>
