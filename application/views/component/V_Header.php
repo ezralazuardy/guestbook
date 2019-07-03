@@ -8,6 +8,13 @@
     <meta name="msapplication-tap-highlight" content="no">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="dns-prefetch" href="<?= base_url(); ?>">
+	<style type="text/css">
+		body {
+	    	opacity:0;
+		    transition: opacity 1s;
+		    -webkit-transition: opacity 1s;
+		}
+	</style>
     <title>Guest Book | BPTIK</title>
     <meta name="title" content="Guest Book | BPTIK">
     <meta name="description" content="Aplikasi buku tamu BPTIK DIKBUD Provinsi Jawa Tengah">
@@ -73,4 +80,4 @@
 	</noscript>
 	<script type="text/javascript">window.base_url = '<?= base_url(); ?>';</script>
 </head>
-<body class="has-background-light">
+<body class="has-background-light"  onload="document.body.style.opacity='1'">

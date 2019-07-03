@@ -37,72 +37,73 @@
 						</span>
 					</a>
 				</header>
-				<div class="card-content card-content-scrollable">
-					<form id="formulirTamu">
-						<div class="field">
-							<label class="label">Nama</label>
-							<div class="control">
-								<input class="input" type="text" name="textNama" placeholder="Masukkan nama lengkap" required>
+				<div id="cardFrameInput">
+					<div class="card-content card-content-scrollable">
+						<form id="formulirTamu" method="POST">
+							<div class="field">
+								<label class="label">Nama *</label>
+								<div class="control">
+									<input class="input" type="text" id="textNama" placeholder="Masukkan nama lengkap" required>
+								</div>
 							</div>
-						</div>
-						<div class="field">
-							<label class="label">Alamat surel</label>
-							<div class="control">
-								<input class="input" type="email" name="textEmail" placeholder="Masukkan alamat surel" required>
+							<div class="field">
+								<label class="label">Alamat surel *</label>
+								<div class="control">
+									<input class="input" type="email" id="textEmail" placeholder="Masukkan alamat surel" required>
+								</div>
 							</div>
-						</div>
-						<div class="field">
-							<label class="label">Instansi</label>
-							<div class="control">
-								<input class="input" type="text" name="textInstansi" placeholder="Masukkan asal instansi" required>
+							<div class="field">
+								<label class="label">Instansi *</label>
+								<div class="control">
+									<input class="input" type="text" id="textInstansi" placeholder="Masukkan asal instansi" required>
+								</div>
 							</div>
-						</div>
-						<div class="field">
-							<label class="label">Alamat</label>
-							<div class="control">
-								<textarea class="textarea" name="textAlamat" placeholder="Masukkan alamat lengkap" required></textarea>
+							<div class="field">
+								<label class="label">Alamat</label>
+								<div class="control">
+									<textarea class="textarea" id="textAlamat" placeholder="Masukkan alamat lengkap"></textarea>
+								</div>
 							</div>
-						</div>
-						<div class="field">
-							<label class="label">No. Telepon</label>
-							<div class="control">
-								<input class="input" type="text" name="textNoTelp" placeholder="Masukkan nomor telepon" required>
+							<div class="field">
+								<label class="label">No. Telepon *</label>
+								<div class="control">
+									<input class="input" type="text" id="textTelepon" placeholder="Masukkan nomor telepon" required>
+								</div>
 							</div>
-						</div>
-						<div class="field">
-							<label class="label">Jenis Kelamin</label>
-							<div class="control">
-								<input class="is-checkradio is-info" id="radioJenisKelamin1" type="radio" name="radioJenisKelamin" checked>
-								<label for="radioJenisKelamin1">Laki - laki</label>
-								<input class="is-checkradio is-info" id="radioJenisKelamin2" type="radio" name="radioJenisKelamin">
-								<label for="radioJenisKelamin2">Perempuan</label>
+							<div class="field">
+								<label class="label">Jenis Kelamin</label>
+								<div class="control">
+									<input class="is-checkradio is-info" id="radioJenisKelamin1" type="radio" name="radioJenisKelamin" checked>
+									<label for="radioJenisKelamin1">Laki - laki</label>
+									<input class="is-checkradio is-info" id="radioJenisKelamin2" type="radio" name="radioJenisKelamin">
+									<label for="radioJenisKelamin2">Perempuan</label>
+								</div>
 							</div>
-						</div>
-						<div class="field">
-							<label class="label">Keperluan</label>
-							<div class="control">
-								<div class="select">
-								<select name="selectKeperluan" required>
-									<option>Pilih keperluan</option>
-									<option>Keperluan A</option>
-									<option>Keperluan B</option>
-									<option>Keperluan C</option>
-								</select>
+							<div class="field">
+								<label class="label">Keperluan</label>
+								<div class="control">
+									<div class="select">
+										<select id="selectKeperluan" required>
+											<option value="Pilih keperluan...">Pilih keperluan...</option>
+											<option value="Keperluan A">Keperluan A</option>
+											<option value="Keperluan B">Keperluan B</option>
+											<option value="Keperluan C">Keperluan C</option>
+										</select>
+									</div>
+								</div>
 							</div>
-							</div>
-						</div>
-						<div class="field">
-							<label class="label">Tanggal masuk</label>
-							<div class="control">
-								<input type="date" required>
-							</div>
-						</div>
+							<input id="formulirTamuSubmit" type="submit" hidden/>
+						</form>
 					</div>
-					<input id="formulirTamuSubmit" type="submit" hidden />
-				</form>
-				<footer class="card-footer">
-					<a class="card-footer-item" onclick="$('#formulirTamuSubmit').trigger('click');"><b>Daftar</b></a>
-				</footer>
+					<footer class="card-footer">
+						<a class="card-footer-item" onclick="$('#formulirTamuSubmit').trigger('click');"><b>Daftar</b></a>
+					</footer>
+				</div>
+				<div id="cardFrameSuccess" class="hidden">
+					<div class="card-content card-content-scrollable has-background-success has-text-centered">
+						<h1 class="title">Berhasil!</h1>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

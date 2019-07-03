@@ -3,11 +3,11 @@ $(function() {
 	var carouselOptions = {
 		effect: 'fade',
 		autoplay: true,
-		autoplaySpeed: 6000,
+		autoplaySpeed: 8000,
 		loop: true,
 		navigation: false,
 		navigationKeys: false,
-		duration: 1000,
+		duration: 600,
 		pagination: false
 	}
 	var calendarOptions = {
@@ -51,10 +51,87 @@ $(function() {
 		responsive: true,
 		scrollX: true
 	});
-	// bulmaToast.toast({
-	// 	message: 'Hello There',
-	// 	type: 'is-success',
-	// 	dismissible: true,
-	// 	animate: { in: 'fadeIn', out: 'fadeOut' }
-	// });
+	$('#formulirTamu').off('submit').on('submit', function(event) {
+		event.preventDefault();
+		var name = $('#textNama').val();
+		if(name == '') { 
+			toast('danger', 'Mohon masukkan nama anda');
+			return false;
+		} else {
+
+		}
+		var email = $('#textEmail').val();
+		if(email == '') {
+			toast('danger', 'Mohon masukkan alamat surel anda');
+			return false;
+		} else {
+
+		}
+		var agency = $('#textInstansi').val();
+		if(agency == '') {
+			toast('danger', 'Mohon masukkan asal instansi anda');
+			return false;
+		}
+		var address = $('#textAlamat').val();
+		var telephone = $('#textTelepon').val();
+		if(telephone == '') {
+			toast('danger', 'Mohon masukkan nomor telepon anda');
+			return false;
+		}
+		var gender = 'l'; if($('#radioJenisKelamin2').prop('checked') == true) gender = 'p';
+		var necessity = $('#selectKeperluan').val();
+		if(necessity == 'Pilih keperluan...') {
+			toast('danger', 'Mohon pilih keperluan anda');
+			return false;
+		} else {
+			
+		}
+		if(name && email && agency && telephone && gender && necessity) {
+			$.ajax({
+				url: base_url + 'formulir/upload',
+				method: 'POST',
+				dataType: 'json',
+				data: {
+					name: name,
+					email: email,
+					agency: agency,
+					address: address,
+					telephone: telephone,
+					gender: gender,
+					necessity: necessity
+				},
+				success: function(response) {
+					if(response.success) {
+						$('#cardFrameInput').fadeOut(function() {
+							$('#cardFrameSuccess').fadeIn(function() {
+								$('#textNama').val(null);
+								$('#textEmail').val(null);
+								$('#textInstansi').val(null);
+								$('#textAlamat').val(null);
+								$('#textTelepon').val(null);
+								$('#selectKeperluan').val('Pilih keperluan...');
+								setTimeout(function() {
+									$('#cardFrameSuccess').fadeOut(function() {
+										$('#cardFrameInput').fadeIn();
+									});
+								}, 3000);
+							});
+						});
+					} else {
+						toast('danger', 'Terjadi kesalahan saat mengunggah data');
+					}
+				},
+				error: function(response) {
+					console.log('ERROR | ' + response.status);
+					toast('danger', 'Terjadi kesalahan saat mengunggah data');
+				}
+			});
+		}
+	});
 });
+
+function toast(type = 'is-info', msg) {
+	if(!msg) return;
+	switch(type) { case 'success': type = 'is-success'; break; case 'danger': type = 'is-danger'; break;  }
+	bulmaToast.toast({ message: msg, type: type, dismissible: true, animate: { in: 'fadeIn', out: 'fadeOut' } });
+}

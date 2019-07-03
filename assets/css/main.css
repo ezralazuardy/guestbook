@@ -8,3 +8,4 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
     overflow-y: auto;
     flex-direction: column;
 }
+.hidden { display: none; }

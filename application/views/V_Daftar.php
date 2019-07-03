@@ -40,8 +40,10 @@
         <table id="tableDaftarTamu" class="display table is-bordered is-striped is-hoverable is-fullwidth" style="width: 100%;">
             <thead>
                 <tr>
-                    <th class="has-text-centered">Column 1</th>
-                    <th class="has-text-centered">Column 2</th>
+                    <th class="has-text-centered">No.</th>
+                    <th class="has-text-centered">Nama</th>
+                    <th class="has-text-centered">Instansi</th>
+                    <th class="has-text-centered">Tanggal Masuk</th>
                 </tr>
             </thead>
             <tbody>
