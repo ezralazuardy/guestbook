@@ -1,5 +1,5 @@
 # guestbook
-Aplikasi buku tamu untuk BPTIK DIKBUD Jateng
+Aplikasi buku tamu untuk BPTIK DIKBUD Jateng. Dibuat dengan ❤ oleh [Ezra Lazuardy](https://gtihub.com/ezralazuardy).
 
 ### Cara instalasi:
 - Gunakan Xampp versi terbaru (https://www.apachefriends.org/download.html)
