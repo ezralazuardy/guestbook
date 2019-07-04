@@ -11,3 +11,5 @@ Aplikasi buku tamu untuk BPTIK DIKBUD Jateng. Dibuat dengan ❤ oleh [Ezra Lazua
 - Pada database guestbook, klik tab impor lalu pilih file guestbook.sql.zip di folder C:/xampp/htdocs/guestbook, dan klik "Kirim"
 - Jika telah sukses impor database, buka http://localhost/guestbook
 - Aplikasi siap digunakan.
+
+Pertanyaan, kritik, atau saran dapat dikirim ke ezra@wingko.id.
