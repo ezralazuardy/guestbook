@@ -17,7 +17,7 @@ $(function() {
 	bulmaCarousel.attach('.hero-carousel', carouselOptions);
 	bulmaCalendar.attach('[type="date"]', calendarOptions);
 	bulmaQuickview.attach();
-    $('#tableDaftarTamu').DataTable({
+    var table = $('#tableDaftarTamu').DataTable({
 		language: {
 			"processing":       "Memuat data...",
 			"loadingRecords":   "Memuat...",
@@ -48,45 +48,55 @@ $(function() {
 		},
 		searching: true,
 		processing: true,
-		responsive: true,
-		scrollX: true
+		responsive: true
 	});
 	$('#formulirTamu').off('submit').on('submit', function(event) {
 		event.preventDefault();
 		var name = $('#textNama').val();
 		if(name == '') { 
+			$('#textNama').addClass('is-danger');
 			toast('danger', 'Mohon masukkan nama anda');
 			return false;
 		} else {
-
+			$('#textNama').removeClass('is-danger');
 		}
 		var email = $('#textEmail').val();
 		if(email == '') {
+			$('#textEmail').addClass('is-danger');
 			toast('danger', 'Mohon masukkan alamat surel anda');
 			return false;
 		} else {
-
+			$('#textEmail').removeClass('is-danger');
 		}
 		var agency = $('#textInstansi').val();
 		if(agency == '') {
+			$('#textInstansi').addClass('is-danger');
 			toast('danger', 'Mohon masukkan asal instansi anda');
 			return false;
+		} else {
+			$('#textInstansi').removeClass('is-danger');
 		}
 		var address = $('#textAlamat').val();
 		var telephone = $('#textTelepon').val();
 		if(telephone == '') {
+			$('#textTelepon').addClass('is-danger');
 			toast('danger', 'Mohon masukkan nomor telepon anda');
 			return false;
+		} else {
+			$('#textTelepon').removeClass('is-danger');
 		}
-		var gender = 'l'; if($('#radioJenisKelamin2').prop('checked') == true) gender = 'p';
+		var gender = 'l';
+		if($('#radioJenisKelamin2').prop('checked') == true) gender = 'p';
 		var necessity = $('#selectKeperluan').val();
 		if(necessity == 'Pilih keperluan...') {
+			$('#selectKeperluanFrame').addClass('is-danger');
 			toast('danger', 'Mohon pilih keperluan anda');
 			return false;
 		} else {
-			
+			$('#selectKeperluanFrame').removeClass('is-danger');
 		}
 		if(name && email && agency && telephone && gender && necessity) {
+			$('#btnFormuliTamuDaftar').addClass('is-loading');
 			$.ajax({
 				url: base_url + 'formulir/upload',
 				method: 'POST',
@@ -112,7 +122,10 @@ $(function() {
 								$('#selectKeperluan').val('Pilih keperluan...');
 								setTimeout(function() {
 									$('#cardFrameSuccess').fadeOut(function() {
-										$('#cardFrameInput').fadeIn();
+										$('#cardFrameInput').fadeIn(function() {
+											$('#cardFrameInputScroll').animate({ scrollTop: 0 }, 500);
+											$('#btnFormuliTamuDaftar').removeClass('is-loading');
+										});
 									});
 								}, 3000);
 							});
@@ -124,6 +137,7 @@ $(function() {
 				error: function(response) {
 					console.log('ERROR | ' + response.status);
 					toast('danger', 'Terjadi kesalahan saat mengunggah data');
+					$('#btnFormuliTamuDaftar').removeClass('is-loading');
 				}
 			});
 		}

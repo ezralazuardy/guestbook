@@ -47,6 +47,20 @@
                 </tr>
             </thead>
             <tbody>
+				<?php
+					if(isset($data)) {
+						$number = 1;
+						foreach($data as $list) {
+							echo '<tr>';
+							echo '<td class="has-text-centered">'.$number.'.</td>';
+							echo '<td>'.$list["name"].'</td>';
+							echo '<td>'.$list["agency"].'</td>';
+							echo '<td>'.$list["created_at"].'</td>';
+							echo '</tr>';
+							$number++;
+						}
+					}
+				?>
             </tbody>
         </table>
     </div>

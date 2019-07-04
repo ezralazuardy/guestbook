@@ -26,7 +26,7 @@
 		</div>
 		<div class="column is-1"></div>
 		<div class="column is-5">
-			<div class="card" style="border-radius: 8px;">
+			<div class="card" style="border-radius: 6px;">
 				<header class="card-header">
 					<p class="card-header-title">
 						Formulir Tamu
@@ -38,7 +38,7 @@
 					</a>
 				</header>
 				<div id="cardFrameInput">
-					<div class="card-content card-content-scrollable">
+					<div id="cardFrameInputScroll" class="card-content card-content-scrollable">
 						<form id="formulirTamu" method="POST">
 							<div class="field">
 								<label class="label">Nama *</label>
@@ -82,7 +82,7 @@
 							<div class="field">
 								<label class="label">Keperluan</label>
 								<div class="control">
-									<div class="select">
+									<div id="selectKeperluanFrame" class="select">
 										<select id="selectKeperluan" required>
 											<option value="Pilih keperluan...">Pilih keperluan...</option>
 											<option value="Keperluan A">Keperluan A</option>
@@ -96,12 +96,15 @@
 						</form>
 					</div>
 					<footer class="card-footer">
-						<a class="card-footer-item" onclick="$('#formulirTamuSubmit').trigger('click');"><b>Daftar</b></a>
+						<a id="btnFormuliTamuDaftar" class="card-footer-item button is-info" style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;" onclick="$('#formulirTamuSubmit').trigger('click');"><b>Daftar</b></a>
 					</footer>
 				</div>
 				<div id="cardFrameSuccess" class="hidden">
-					<div class="card-content card-content-scrollable has-background-success has-text-centered">
-						<h1 class="title">Berhasil!</h1>
+					<div class="card-content card-content-scrollable has-background-success has-text-centered" style="border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;">
+						<div style="margin-top: 82px">
+							<h1 class="title white"><i class="fas fa-check fa-1x white" style="margin-right: 12px;"></i>Berhasil!</h1>
+							<p class="subtitle white" style="margin-top: 4px; font-size: 1rem;">Anda berhasil mendaftar sebagai tamu di BPTIK DIKBUD Provinsi Jateng.</p>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -8,13 +8,7 @@
     <meta name="msapplication-tap-highlight" content="no">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="dns-prefetch" href="<?= base_url(); ?>">
-	<style type="text/css">
-		body {
-	    	opacity:0;
-		    transition: opacity 1s;
-		    -webkit-transition: opacity 1s;
-		}
-	</style>
+	<style type="text/css"> body { opacity:0; transition: opacity 1s; -webkit-transition: opacity 1s; } </style>
     <title>Guest Book | BPTIK</title>
     <meta name="title" content="Guest Book | BPTIK">
     <meta name="description" content="Aplikasi buku tamu BPTIK DIKBUD Provinsi Jawa Tengah">
@@ -33,31 +27,31 @@
 		href="<?= base_url('assets/img/favicon-32x32.png'); ?>">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/bulma/css/bulma.min.css'); ?>"
-		onload="javascript:this.onload=null; this.rel='stylesheet';">
+		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/bulma/extensions/bulma-carousel.min.css'); ?>"
-		onload="javascript:this.onload=null; this.rel='stylesheet';">
+		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/bulma/extensions/bulma-calendar.min.css'); ?>"
-		onload="javascript:this.onload=null; this.rel='stylesheet';">
+		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/bulma/extensions/bulma-checkradio.min.css'); ?>"
-		onload="javascript:this.onload=null; this.rel='stylesheet';">
+		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/bulma/extensions/bulma-quickview.min.css'); ?>"
-		onload="javascript:this.onload=null; this.rel='stylesheet';">
+		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/bulma/extensions/bulma-dataTables.min.css'); ?>"
-		onload="javascript:this.onload=null; this.rel='stylesheet';">
+		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/animate/animate.min.css'); ?>"
-		onload="javascript:this.onload=null; this.rel='stylesheet';">
+		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/main.css'); ?>"
-		onload="javascript:this.onload=null; this.rel='stylesheet';">
+		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/fontawesome/css/all.min.css'); ?>"
-		onload="javascript:this.onload=null; this.rel='stylesheet';">
+		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<noscript>
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/bulma/css/bulma.min.css'); ?>">
@@ -80,4 +74,4 @@
 	</noscript>
 	<script type="text/javascript">window.base_url = '<?= base_url(); ?>';</script>
 </head>
-<body class="has-background-light"  onload="document.body.style.opacity='1'">
+<body class="has-background-light"  onload="document.body.style.opacity = '1'; this.onload = null">

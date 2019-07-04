@@ -5,9 +5,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['formulir'] = 'C_Formulir';
-$route['formulir/(:any)'] = 'C_Formulir/$1';
-$route['formulir/(:any)/(:any)'] = 'C_Formulir/$1/$2';
+$route['formulir/upload'] = 'C_Formulir/upload';
 
 $route['daftar'] = 'C_Daftar';
-$route['daftar/(:any)'] = 'C_Daftar/$1';
-$route['daftar/(:any)/(:any)'] = 'C_Daftar/$1/$2';
+$route['daftar/getData'] = 'C_Daftar/getData';
