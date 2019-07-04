@@ -149,3 +149,9 @@ function toast(type = 'is-info', msg) {
 	switch(type) { case 'success': type = 'is-success'; break; case 'danger': type = 'is-danger'; break;  }
 	bulmaToast.toast({ message: msg, type: type, dismissible: true, animate: { in: 'fadeIn', out: 'fadeOut' } });
 }
+
+function openModalContohSurat() {
+	$('#modalContohSurat').addClass('is-active');
+	$('#modalContohSuratBackground').off('click').click(function() { $('#modalContohSurat').fadeOut(function() { $('#modalContohSurat').removeClass('is-active'); $('#modalContohSurat').removeAttr('style'); }); });
+	$('#modalContohSuratClose').off('click').click(function() { $('#modalContohSurat').fadeOut(function() { $('#modalContohSurat').removeClass('is-active'); $('#modalContohSurat').removeAttr('style'); }); });
+}

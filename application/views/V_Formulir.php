@@ -31,6 +31,11 @@
 					<p class="card-header-title">
 						Formulir Tamu
 					</p>
+					<a class="card-header-icon" aria-label="Contoh surat" title="Contoh detail surat" style="margin-right: 24px;">
+						<span class="icon">
+							<button class="button is-link is-small" onclick="openModalContohSurat();">Contoh surat</button>
+						</span>
+					</a>
 					<a class="card-header-icon" aria-label="Informasi" title="Informasi" data-show="quickview" data-target="quickViewInfo">
 						<span class="icon">
 							<i class="fas fa-info-circle" aria-hidden="true"></i>
@@ -73,9 +78,9 @@
 							<div class="field">
 								<label class="label">Jenis Kelamin</label>
 								<div class="control">
-									<input class="is-checkradio is-info" id="radioJenisKelamin1" type="radio" name="radioJenisKelamin" checked>
+									<input class="is-checkradio is-link" id="radioJenisKelamin1" type="radio" name="radioJenisKelamin" checked>
 									<label for="radioJenisKelamin1">Laki - laki</label>
-									<input class="is-checkradio is-info" id="radioJenisKelamin2" type="radio" name="radioJenisKelamin">
+									<input class="is-checkradio is-link" id="radioJenisKelamin2" type="radio" name="radioJenisKelamin">
 									<label for="radioJenisKelamin2">Perempuan</label>
 								</div>
 							</div>
@@ -96,7 +101,7 @@
 						</form>
 					</div>
 					<footer class="card-footer">
-						<a id="btnFormuliTamuDaftar" class="card-footer-item button is-info" style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;" onclick="$('#formulirTamuSubmit').trigger('click');"><b>Daftar</b></a>
+						<a id="btnFormuliTamuDaftar" class="card-footer-item button" style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;" onclick="$('#formulirTamuSubmit').trigger('click');"><b class="has-text-link">Daftar</b></a>
 					</footer>
 				</div>
 				<div id="cardFrameSuccess" class="hidden">
@@ -119,3 +124,12 @@
 		style="background-image: url('<?= base_url('assets/img/carousel-3.webp') ?>');"></div>
 	</div>
 </section>
+<div id="modalContohSurat" class="modal">
+	<div id="modalContohSuratBackground" class="modal-background"></div>
+		<div class="modal-content">
+			<p class="image">
+				<img src="<?= base_url('assets/img/contoh_surat.webp'); ?>" alt="Contoh surat">
+			</p>
+	</div>
+	<button id="modalContohSuratClose" class="modal-close is-large" aria-label="close"></button>
+</div>

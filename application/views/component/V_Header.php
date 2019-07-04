@@ -17,14 +17,14 @@
 	<meta property="og:site_name" content="Guest Book | BPTIK" />
 	<meta property="og:title" content="Guest Book | BPTIK"/>
 	<meta property="og:description" content="Aplikasi buku tamu BPTIK DIKBUD Provinsi Jawa Tengah." />
-	<link type="image/x-icon" rel="shortcut icon"
-		href="<?= base_url('assets/img/favicon.ico'); ?>">
+	<link type="image/png" rel="shortcut icon"
+		href="<?= base_url('assets/img/favicon.png'); ?>">
 	<link type="image/png" rel="icon"
-		href="<?= base_url('assets/img/favicon-16x16.png'); ?>" sizes="16x16" />
+		href="<?= base_url('assets/img/favicon.png'); ?>" sizes="16x16" />
 	<link type="image/png" rel="icon"
-		href="<?= base_url('assets/img/favicon-32x32.png'); ?>" sizes="32x32" />
+		href="<?= base_url('assets/img/favicon.png'); ?>" sizes="32x32" />
 	<link type="image/png" rel="apple-touch-icon"
-		href="<?= base_url('assets/img/favicon-32x32.png'); ?>">
+		href="<?= base_url('assets/img/favicon.png'); ?>">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/bulma/css/bulma.min.css'); ?>"
 		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
