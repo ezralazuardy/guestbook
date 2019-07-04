@@ -1,6 +1,5 @@
 # guestbook
-
-## Aplikasi buku tamu untuk BPTIK DIKBUD Jateng
+Aplikasi buku tamu untuk BPTIK DIKBUD Jateng
 
 ### Cara instalasi:
 - Gunakan Xampp versi terbaru (https://www.apachefriends.org/download.html)
