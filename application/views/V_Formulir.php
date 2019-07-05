@@ -26,7 +26,7 @@
 		</div>
 		<div class="column is-1"></div>
 		<div class="column is-5">
-			<div class="card" style="border-radius: 6px;">
+			<div class="card"  style="border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
 				<header class="card-header">
 					<p class="card-header-title">
 						Formulir Tamu
@@ -101,7 +101,7 @@
 						</form>
 					</div>
 					<footer class="card-footer">
-						<a id="btnFormuliTamuDaftar" class="card-footer-item button" style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;" onclick="$('#formulirTamuSubmit').trigger('click');"><b class="has-text-link">Daftar</b></a>
+						<a id="btnFormuliTamuDaftar" class="card-footer-item button button is-link" style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;" onclick="$('#formulirTamuSubmit').trigger('click');"><b>Daftar</b></a>
 					</footer>
 				</div>
 				<div id="cardFrameSuccess" class="hidden">

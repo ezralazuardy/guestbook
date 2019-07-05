@@ -127,7 +127,7 @@ $(function() {
 											$('#btnFormuliTamuDaftar').removeClass('is-loading');
 										});
 									});
-								}, 3000);
+								}, 2500);
 							});
 						});
 					} else {
