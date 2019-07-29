@@ -64,7 +64,7 @@
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/bulma/extensions/bulma-quickview.min.css'); ?>">
 		<link type="text/css" rel="stylesheet"
-			href="<?= base_url('assets/css/datatables/jquery.dataTables.min.css'); ?>">
+			href="<?= base_url('assets/css/datatables/bulma-dataTables.min.css'); ?>">
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/main.css'); ?>">
 		<link type="text/css" rel="stylesheet"
