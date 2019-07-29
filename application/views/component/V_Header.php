@@ -41,7 +41,7 @@
 		href="<?= base_url('assets/css/bulma/extensions/bulma-quickview.min.css'); ?>"
 		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
-		href="<?= base_url('assets/css/bulma/extensions/bulma-dataTables.min.css'); ?>"
+		href="<?= base_url('assets/css/bulma/extensions/bulma-datatables.min.css'); ?>"
 		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/animate/animate.min.css'); ?>"
@@ -64,7 +64,7 @@
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/bulma/extensions/bulma-quickview.min.css'); ?>">
 		<link type="text/css" rel="stylesheet"
-			href="<?= base_url('assets/css/datatables/bulma-dataTables.min.css'); ?>">
+			href="<?= base_url('assets/css/bulma/extensions/bulma-datatables.min.css'); ?>">
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/main.css'); ?>">
 		<link type="text/css" rel="stylesheet"
