@@ -41,10 +41,7 @@
 		href="<?= base_url('assets/css/bulma/extensions/bulma-quickview.min.css'); ?>"
 		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
-		href="<?= base_url('assets/css/bulma/extensions/bulma-datatables.min.css'); ?>"
-		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
-	<link type="text/css" rel="preload" as="style"
-		href="<?= base_url('assets/css/animate/animate.min.css'); ?>"
+		href="<?= base_url('assets/plugin/datatables/datatables.min.css'); ?>"
 		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/main.css'); ?>"
@@ -64,14 +61,12 @@
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/bulma/extensions/bulma-quickview.min.css'); ?>">
 		<link type="text/css" rel="stylesheet"
-			href="<?= base_url('assets/css/bulma/extensions/bulma-datatables.min.css'); ?>">
+			href="<?= base_url('assets/plugin/datatables/datatables.min.css'); ?>">
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/main.css'); ?>">
-		<link type="text/css" rel="stylesheet"
-			href="<?= base_url('assets/css/animate/animate.min.css'); ?>">
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/fontawesome/css/all.min.css'); ?>">
 	</noscript>
 	<script type="text/javascript">window.base_url = '<?= base_url(); ?>';</script>
 </head>
-<body class="has-background-light"  onload="document.body.style.opacity = '1'; this.onload = null">
+<body class="has-background-light" onload="document.body.style.opacity = '1'; this.onload = null">

@@ -23,7 +23,6 @@
 	<script type="text/javascript" src="<?= base_url('assets/js/bulma/extensions/bulma-toast.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/bulma/extensions/bulma-calendar.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/bulma/extensions/bulma-quickview.min.js'); ?>"></script>
-	<script type="text/javascript" src="<?= base_url('assets/js/bulma/extensions/bulma-dataTables.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/main.js'); ?>"></script>
 </body>
 </html>

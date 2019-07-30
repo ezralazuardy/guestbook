@@ -1,3 +1,4 @@
+const title = 'Daftar Tamu BPTIK DIKBUD';
 $(function() {
 	$(".navbar-burger").click(function() { $(".navbar-burger").toggleClass("is-active"); $(".navbar-menu").toggleClass("is-active"); });
 	var carouselOptions = {
@@ -17,7 +18,36 @@ $(function() {
 	bulmaCarousel.attach('.hero-carousel', carouselOptions);
 	bulmaCalendar.attach('[type="date"]', calendarOptions);
 	bulmaQuickview.attach();
-    var table = $('#tableDaftarTamu').DataTable({
+	$('#tableDaftarTamu').DataTable({
+		dom: 'Bfrtip',
+		buttons: [
+			'pageLength',
+			{
+				extend: 'collection',
+				text: 'Ekspor Data',
+				buttons: [
+					{
+						extend: 'copyHtml5',
+						title: title
+					},
+					{
+						extend: 'excelHtml5',
+						title: title
+					},
+					{
+						extend: 'csvHtml5',
+						title: title
+					},
+					{
+						extend: 'pdfHtml5',
+						title: title,
+						customize: function (doc) {
+							doc.content[1].table.widths = Array(doc.content[1].table.body[0].length + 1).join('*').split('');
+						}
+					}
+				]
+			}
+		],
 		language: {
 			"processing":       "Memuat data...",
 			"loadingRecords":   "Memuat...",
@@ -42,13 +72,18 @@ $(function() {
 				"pageLength": {
 					_: "Menampilkan %d baris",
 					'-1': "Tampilkan semua"
-				},
-				"excel": "Ekspor ke Excel"
+				}
 			}
 		},
 		searching: true,
 		processing: true,
-		responsive: true
+		initComplete: function() {
+			$('div .dt-buttons').css({'float': 'left', 'margin-bottom': '12px'});
+			$('.dataTables_filter').css({'float': 'right', 'margin-top': '14px'});
+			$('.dataTables_filter label').css({'margin-bottom': '0px'});
+			$('.dataTables_info').css({'float': 'left', 'margin-top': '6px'});
+			$('.dataTables_paginate').css({'float': 'right', 'margin-top': '8px'});
+		}
 	});
 	$('#formulirTamu').off('submit').on('submit', function(event) {
 		event.preventDefault();

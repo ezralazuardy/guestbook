@@ -35,9 +35,9 @@
 		style="background-image: url('<?= base_url('assets/img/carousel-3.webp') ?>');"></div>
 	</div>
 </section>
-<div class="container" style="padding-top: 33px; padding-bottom: 33px;">
+<div class="container" style="padding-top: 32px; padding-bottom: 32px;">
     <div>
-        <table id="tableDaftarTamu" class="display table is-bordered is-striped is-hoverable is-fullwidth" style="width: 100%;">
+        <table id="tableDaftarTamu" class="display table is-bordered is-striped is-hoverable is-fullwidth">
             <thead>
                 <tr>
                     <th class="has-text-centered">No.</th>
@@ -52,12 +52,11 @@
 						$number = 1;
 						foreach($data as $list) {
 							echo '<tr>';
-							echo '<td class="has-text-centered">'.$number.'.</td>';
+							echo '<td class="has-text-centered">'.$number++.'.</td>';
 							echo '<td>'.$list["name"].'</td>';
 							echo '<td>'.$list["agency"].'</td>';
 							echo '<td>'.$list["created_at"].'</td>';
 							echo '</tr>';
-							$number++;
 						}
 					}
 				?>

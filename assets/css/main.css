@@ -13,3 +13,7 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
     flex-direction: column;
 }
 .hidden { display: none; }
+#tableDaftarTamu {
+    width: 100%;
+    margin-bottom: 0;
+}
