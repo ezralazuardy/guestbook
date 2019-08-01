@@ -17,3 +17,14 @@ body::-webkit-scrollbar { width: 0px; background: transparent; }
     width: 100%;
     margin-bottom: 0;
 }
+th.has-text-centered {
+	vertical-align: middle;
+}
+a, span, button, i, input {
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
+i.is-dark {
+	color: #363636;
+}

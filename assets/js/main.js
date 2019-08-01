@@ -77,6 +77,8 @@ $(function() {
 		},
 		searching: true,
 		processing: true,
+		responsive: true,
+		scrollX: true,
 		initComplete: function() {
 			$('div .dt-buttons').css({'float': 'left', 'margin-bottom': '12px'});
 			$('.dataTables_filter').css({'float': 'right', 'margin-top': '14px'});

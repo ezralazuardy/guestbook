@@ -37,13 +37,21 @@
 </section>
 <div class="container" style="padding-top: 32px; padding-bottom: 32px;">
     <div>
-        <table id="tableDaftarTamu" class="display table is-bordered is-striped is-hoverable is-fullwidth">
+        <table id="tableDaftarTamu" class="display table is-bordered is-striped is-hoverable is-fullwidth" style="width: 100%;">
             <thead>
                 <tr>
-                    <th class="has-text-centered">No.</th>
-                    <th class="has-text-centered">Nama</th>
-                    <th class="has-text-centered">Instansi</th>
-                    <th class="has-text-centered">Tanggal Masuk</th>
+                    <th class="has-text-centered" rowspan="2">No.</th>
+                    <th class="has-text-centered" rowspan="2">Pengunjung</th>
+                    <th class="has-text-centered" rowspan="2">Tanggal Pelaksanaan</th>
+                    <th class="has-text-centered" rowspan="2">Waktu Pelaksanaan</th>
+                    <th class="has-text-centered" colspan="2">Peserta</th>
+                    <th class="has-text-centered" rowspan="2">Kontak</th>
+                    <th class="has-text-centered" rowspan="2">Konfirmasi</th>
+                    <th class="has-text-centered" rowspan="2">Keterangan</th>
+                </tr>
+                <tr>
+                    <th class="has-text-centered">Siswa</th>
+                    <th class="has-text-centered">Guru</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,9 +61,14 @@
 						foreach($data as $list) {
 							echo '<tr>';
 							echo '<td class="has-text-centered">'.$number++.'.</td>';
-							echo '<td>'.$list["name"].'</td>';
-							echo '<td>'.$list["agency"].'</td>';
-							echo '<td>'.$list["created_at"].'</td>';
+							echo '<td>'.$list["visitor"].'</td>';
+							echo '<td>'.$list["visit_date"].'</td>';
+							echo '<td>'.$list["visit_time"].'</td>';
+							echo '<td>'.$list["count_student"].'</td>';
+							echo '<td>'.$list["count_teacher"].'</td>';
+							echo '<td>'.$list["contact"].'</td>';
+							echo '<td>'.$list["visit_confirmation"].'</td>';
+							echo '<td>'.$list["information"].'</td>';
 							echo '</tr>';
 						}
 					}

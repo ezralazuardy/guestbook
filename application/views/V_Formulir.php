@@ -33,12 +33,12 @@
 					</p>
 					<a class="card-header-icon" aria-label="Contoh surat" title="Contoh detail surat" style="margin-right: 24px;">
 						<span class="icon">
-							<button class="button is-link is-small" onclick="openModalContohSurat();">Contoh surat</button>
+							<button class="button is-dark is-small" onclick="openModalContohSurat();">Contoh surat</button>
 						</span>
 					</a>
 					<a class="card-header-icon" aria-label="Informasi" title="Informasi" data-show="quickview" data-target="quickViewInfo">
 						<span class="icon">
-							<i class="fas fa-info-circle" aria-hidden="true"></i>
+							<i class="fas fa-info-circle is-dark" aria-hidden="true"></i>
 						</span>
 					</a>
 				</header>
@@ -78,16 +78,16 @@
 							<div class="field">
 								<label class="label">Jenis Kelamin</label>
 								<div class="control">
-									<input class="is-checkradio is-link" id="radioJenisKelamin1" type="radio" name="radioJenisKelamin" checked>
+									<input class="is-checkradio is-dark" id="radioJenisKelamin1" type="radio" name="radioJenisKelamin" checked>
 									<label for="radioJenisKelamin1">Laki - laki</label>
-									<input class="is-checkradio is-link" id="radioJenisKelamin2" type="radio" name="radioJenisKelamin">
+									<input class="is-checkradio is-dark" id="radioJenisKelamin2" type="radio" name="radioJenisKelamin">
 									<label for="radioJenisKelamin2">Perempuan</label>
 								</div>
 							</div>
 							<div class="field">
 								<label class="label">Keperluan</label>
 								<div class="control">
-									<div id="selectKeperluanFrame" class="select">
+									<div id="selectKeperluanFrame" class="select is-dark">
 										<select id="selectKeperluan" required>
 											<option value="Pilih keperluan...">Pilih keperluan...</option>
 											<option value="Keperluan A">Keperluan A</option>
@@ -101,7 +101,7 @@
 						</form>
 					</div>
 					<footer class="card-footer">
-						<a id="btnFormuliTamuDaftar" class="card-footer-item button button is-link" style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;" onclick="$('#formulirTamuSubmit').trigger('click');"><b>Daftar</b></a>
+						<a id="btnFormuliTamuDaftar" class="card-footer-item button button is-dark" style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;" onclick="$('#formulirTamuSubmit').trigger('click');"><b>Daftar</b></a>
 					</footer>
 				</div>
 				<div id="cardFrameSuccess" class="hidden">
