@@ -41,17 +41,20 @@
             <thead>
                 <tr>
                     <th class="has-text-centered" rowspan="2">No.</th>
-                    <th class="has-text-centered" rowspan="2">Pengunjung</th>
+                    <th class="has-text-centered" rowspan="2">Nama</th>
+                    <th class="has-text-centered" rowspan="2">Alamat Surel</th>
+                    <th class="has-text-centered" rowspan="2">Jenis Kelamin</th>
+                    <th class="has-text-centered" rowspan="2">Instansi</th>
+                    <th class="has-text-centered" rowspan="2">Alamat</th>
+                    <th class="has-text-centered" rowspan="2">Kontak</th>
+                    <th class="has-text-centered" colspan="2">Peserta</th>
                     <th class="has-text-centered" rowspan="2">Tanggal Pelaksanaan</th>
                     <th class="has-text-centered" rowspan="2">Waktu Pelaksanaan</th>
-                    <th class="has-text-centered" colspan="2">Peserta</th>
-                    <th class="has-text-centered" rowspan="2">Kontak</th>
-                    <th class="has-text-centered" rowspan="2">Konfirmasi</th>
-                    <th class="has-text-centered" rowspan="2">Keterangan</th>
+                    <th class="has-text-centered" rowspan="2">Keperluan</th>
                 </tr>
                 <tr>
-                    <th class="has-text-centered">Siswa</th>
                     <th class="has-text-centered">Guru</th>
+                    <th class="has-text-centered">Siswa</th>
                 </tr>
             </thead>
             <tbody>
@@ -61,14 +64,17 @@
 						foreach($data as $list) {
 							echo '<tr>';
 							echo '<td class="has-text-centered">'.$number++.'.</td>';
-							echo '<td>'.$list["visitor"].'</td>';
+							echo '<td>'.$list["name"].'</td>';
+							echo '<td>'.$list["email"].'</td>';
+							echo '<td>'.$list["gender"].'</td>';
+							echo '<td>'.$list["agency"].'</td>';
+							echo '<td>'.(($list["address"]) ? $list["address"] : "-").'</td>';
+							echo '<td>'.$list["contact_number"].'</td>';
+							echo '<td>'.$list["teacher_visior_count"].'</td>';
+							echo '<td>'.$list["student_visior_count"].'</td>';
 							echo '<td>'.$list["visit_date"].'</td>';
 							echo '<td>'.$list["visit_time"].'</td>';
-							echo '<td>'.$list["count_student"].'</td>';
-							echo '<td>'.$list["count_teacher"].'</td>';
-							echo '<td>'.$list["contact"].'</td>';
-							echo '<td>'.$list["visit_confirmation"].'</td>';
-							echo '<td>'.$list["information"].'</td>';
+							echo '<td>'.$list["necessity"].'</td>';
 							echo '</tr>';
 						}
 					}
