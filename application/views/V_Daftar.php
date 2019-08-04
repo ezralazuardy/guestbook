@@ -49,12 +49,14 @@
                     <th class="has-text-centered" rowspan="2">Kontak</th>
                     <th class="has-text-centered" colspan="2">Peserta</th>
                     <th class="has-text-centered" rowspan="2">Tanggal Pelaksanaan</th>
-                    <th class="has-text-centered" rowspan="2">Waktu Pelaksanaan</th>
+                    <th class="has-text-centered" colspan="2">Waktu Pelaksanaan</th>
                     <th class="has-text-centered" rowspan="2">Keperluan</th>
                 </tr>
                 <tr>
                     <th class="has-text-centered">Guru</th>
                     <th class="has-text-centered">Siswa</th>
+                    <th class="has-text-centered">Mulai</th>
+                    <th class="has-text-centered">Selesai</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,14 +68,15 @@
 							echo '<td class="has-text-centered">'.$number++.'.</td>';
 							echo '<td>'.$list["name"].'</td>';
 							echo '<td>'.$list["email"].'</td>';
-							echo '<td>'.$list["gender"].'</td>';
+							echo '<td class="has-text-centered">'.(($list["gender"] == "m") ? "Laki - laki" : "Perempuan").'</td>';
 							echo '<td>'.$list["agency"].'</td>';
 							echo '<td>'.(($list["address"]) ? $list["address"] : "-").'</td>';
-							echo '<td>'.$list["contact_number"].'</td>';
-							echo '<td>'.$list["teacher_visior_count"].'</td>';
-							echo '<td>'.$list["student_visior_count"].'</td>';
-							echo '<td>'.$list["visit_date"].'</td>';
-							echo '<td>'.$list["visit_time"].'</td>';
+							echo '<td>'.$list["telephone"].'</td>';
+							echo '<td class="has-text-centered">'.$list["teacher_count"].'</td>';
+							echo '<td class="has-text-centered">'.$list["student_count"].'</td>';
+							echo '<td class="has-text-centered">'.(date("d F Y", strtotime($list["visit_date"]))).'</td>';
+							echo '<td class="has-text-centered">'.(date("H:i", strtotime($list["visit_time_start"]))).'</td>';
+							echo '<td class="has-text-centered">'.(date("H:i", strtotime($list["visit_time_end"]))).'</td>';
 							echo '<td>'.$list["necessity"].'</td>';
 							echo '</tr>';
 						}

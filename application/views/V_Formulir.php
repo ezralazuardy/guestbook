@@ -58,6 +58,15 @@
 								</div>
 							</div>
 							<div class="field">
+								<label class="label">Jenis Kelamin</label>
+								<div class="control">
+									<input class="is-checkradio is-dark" id="radioJenisKelamin1" type="radio" name="radioJenisKelamin" checked>
+									<label for="radioJenisKelamin1">Laki - laki</label>
+									<input class="is-checkradio is-dark" id="radioJenisKelamin2" type="radio" name="radioJenisKelamin">
+									<label for="radioJenisKelamin2">Perempuan</label>
+								</div>
+							</div>
+							<div class="field">
 								<label class="label">Instansi *</label>
 								<div class="control">
 									<input class="input" type="text" id="textInstansi" placeholder="Masukkan asal instansi" required>
@@ -76,12 +85,28 @@
 								</div>
 							</div>
 							<div class="field">
-								<label class="label">Jenis Kelamin</label>
+								<label class="label">Jumlah Peserta *</label>
+								<div class="columns is-multiline">
+									<div class="column is-6">
+										<div class="control">
+											<input class="input" type="number" id="textGuruCount" placeholder="Guru">
+										</div>
+									</div>
+									<div class="column is-6">
+										<div class="control">
+											<input class="input" type="number" id="textSiswaCount" placeholder="Siswa">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="field">
+								<label class="label">Tanggal Pelaksanaan *</label>
+									<input id="inputTanggalPelaksanaan" type="date" required>
+							</div>
+							<div class="field">
+								<label class="label">Waktu Pelaksanaan *</label>
 								<div class="control">
-									<input class="is-checkradio is-dark" id="radioJenisKelamin1" type="radio" name="radioJenisKelamin" checked>
-									<label for="radioJenisKelamin1">Laki - laki</label>
-									<input class="is-checkradio is-dark" id="radioJenisKelamin2" type="radio" name="radioJenisKelamin">
-									<label for="radioJenisKelamin2">Perempuan</label>
+									<input id="inputWaktuPelaksanaan" type="time" required>
 								</div>
 							</div>
 							<div class="field">
@@ -97,11 +122,10 @@
 									</div>
 								</div>
 							</div>
-							<input id="formulirTamuSubmit" type="submit" hidden/>
 						</form>
 					</div>
 					<footer class="card-footer">
-						<a id="btnFormuliTamuDaftar" class="card-footer-item button button is-dark" style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;" onclick="$('#formulirTamuSubmit').trigger('click');"><b>Daftar</b></a>
+						<a id="btnFormuliTamuDaftar" class="card-footer-item button button is-dark" style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;" onclick="javascript:submitFormulir();"><b>Daftar</b></a>
 					</footer>
 				</div>
 				<div id="cardFrameSuccess" class="hidden">

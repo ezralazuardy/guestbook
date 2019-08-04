@@ -1,7 +1,11 @@
 const title = 'Daftar Tamu BPTIK DIKBUD';
-$(function() {
-	$(".navbar-burger").click(function() { $(".navbar-burger").toggleClass("is-active"); $(".navbar-menu").toggleClass("is-active"); });
-	var carouselOptions = {
+let carousel, datePicker, timePicker, quickView;
+
+$( async _ => {
+	
+	$(".navbar-burger").click( _ => { $(".navbar-burger").toggleClass("is-active"); $(".navbar-menu").toggleClass("is-active"); });
+	
+	carousel = bulmaCarousel.attach('.hero-carousel', {
 		effect: 'fade',
 		autoplay: true,
 		autoplaySpeed: 8000,
@@ -10,14 +14,38 @@ $(function() {
 		navigationKeys: false,
 		duration: 600,
 		pagination: false
-	}
-	var calendarOptions = {
-		color: 'info',
-		displayMode: 'dialog'
-	}
-	bulmaCarousel.attach('.hero-carousel', carouselOptions);
-	bulmaCalendar.attach('[type="date"]', calendarOptions);
-	bulmaQuickview.attach();
+	});
+
+	datePicker = bulmaCalendar.attach('#inputTanggalPelaksanaan', {
+		type: 'date',
+		color: 'dark',
+		displayMode: 'dialog',
+		cancelLabel: 'Batal',
+		clearLabel: 'Hapus',
+		todayLabel: 'Hari ini',
+		nowLabel: 'Sekarang',
+		validateLabel: 'Pilih'
+	});
+	if(datePicker[0]) datePicker[0].clear();
+
+	timePicker = bulmaCalendar.attach('#inputWaktuPelaksanaan', {
+		type: 'time',
+		color: 'dark',
+		displayMode: 'dialog',
+		cancelLabel: 'Batal',
+		clearLabel: 'Hapus',
+		todayLabel: 'Hari ini',
+		nowLabel: 'Sekarang',
+		validateLabel: 'Pilih',
+	    labelFrom: 'Mulai',
+	    labelTo: 'Selesai',
+		isRange: true,
+	    minuteSteps: 1
+	});
+	if(timePicker[0]) timePicker[0].clear();
+
+	quickView = bulmaQuickview.attach();
+
 	$('#tableDaftarTamu').DataTable({
 		dom: 'Bfrtip',
 		buttons: [
@@ -41,7 +69,7 @@ $(function() {
 					{
 						extend: 'pdfHtml5',
 						title: title,
-						customize: function (doc) {
+						customize: (doc) => {
 							doc.content[1].table.widths = Array(doc.content[1].table.body[0].length + 1).join('*').split('');
 						}
 					}
@@ -78,7 +106,7 @@ $(function() {
 		searching: true,
 		processing: true,
 		scrollX: true,
-		initComplete: function() {
+		initComplete: _ => {
 			$('div .dt-buttons').css({'float': 'left', 'margin-bottom': '12px'});
 			$('.dataTables_filter').css({'float': 'right', 'margin-top': '14px'});
 			$('.dataTables_filter label').css({'margin-bottom': '0px'});
@@ -86,108 +114,184 @@ $(function() {
 			$('.dataTables_paginate').css({'float': 'right', 'margin-top': '8px'});
 		}
 	});
-	$('#formulirTamu').off('submit').on('submit', function(event) {
-		event.preventDefault();
-		var name = $('#textNama').val();
-		if(name == '') { 
-			$('#textNama').addClass('is-danger');
-			toast('danger', 'Mohon masukkan nama anda');
-			return false;
-		} else {
-			$('#textNama').removeClass('is-danger');
-		}
-		var email = $('#textEmail').val();
-		if(email == '') {
-			$('#textEmail').addClass('is-danger');
-			toast('danger', 'Mohon masukkan alamat surel anda');
-			return false;
-		} else {
-			$('#textEmail').removeClass('is-danger');
-		}
-		var agency = $('#textInstansi').val();
-		if(agency == '') {
-			$('#textInstansi').addClass('is-danger');
-			toast('danger', 'Mohon masukkan asal instansi anda');
-			return false;
-		} else {
-			$('#textInstansi').removeClass('is-danger');
-		}
-		var address = $('#textAlamat').val();
-		var telephone = $('#textTelepon').val();
-		if(telephone == '') {
-			$('#textTelepon').addClass('is-danger');
-			toast('danger', 'Mohon masukkan nomor telepon anda');
-			return false;
-		} else {
-			$('#textTelepon').removeClass('is-danger');
-		}
-		var gender = 'l';
-		if($('#radioJenisKelamin2').prop('checked') == true) gender = 'p';
-		var necessity = $('#selectKeperluan').val();
-		if(necessity == 'Pilih keperluan...') {
-			$('#selectKeperluanFrame').addClass('is-danger');
-			toast('danger', 'Mohon pilih keperluan anda');
-			return false;
-		} else {
-			$('#selectKeperluanFrame').removeClass('is-danger');
-		}
-		if(name && email && agency && telephone && gender && necessity) {
-			$('#btnFormuliTamuDaftar').addClass('is-loading');
-			$.ajax({
-				url: base_url + 'formulir/upload',
-				method: 'POST',
-				dataType: 'json',
-				data: {
-					name: name,
-					email: email,
-					agency: agency,
-					address: address,
-					telephone: telephone,
-					gender: gender,
-					necessity: necessity
-				},
-				success: function(response) {
-					if(response.success) {
-						$('#cardFrameInput').fadeOut(function() {
-							$('#cardFrameSuccess').fadeIn(function() {
-								$('#textNama').val(null);
-								$('#textEmail').val(null);
-								$('#textInstansi').val(null);
-								$('#textAlamat').val(null);
-								$('#textTelepon').val(null);
-								$('#selectKeperluan').val('Pilih keperluan...');
-								setTimeout(function() {
-									$('#cardFrameSuccess').fadeOut(function() {
-										$('#cardFrameInput').fadeIn(function() {
-											$('#cardFrameInputScroll').animate({ scrollTop: 0 }, 500);
-											$('#btnFormuliTamuDaftar').removeClass('is-loading');
-										});
-									});
-								}, 2500);
-							});
-						});
-					} else {
-						toast('danger', 'Terjadi kesalahan saat mengunggah data');
-					}
-				},
-				error: function(response) {
-					console.log('ERROR | ' + response.status);
-					toast('danger', 'Terjadi kesalahan saat mengunggah data');
-					$('#btnFormuliTamuDaftar').removeClass('is-loading');
-				}
-			});
-		}
-	});
 });
 
-function toast(type = 'is-info', msg) {
+const submitFormulir = _ => {
+
+	// check name
+	const name = $('#textNama').val();
+	if(name == '') { 
+		$('#textNama').addClass('is-danger');
+		toast('danger', 'Mohon masukkan nama anda');
+		return;
+	} else {
+		$('#textNama').removeClass('is-danger');
+	}
+
+	// check email
+	const email = $('#textEmail').val();
+	if(email == '') {
+		$('#textEmail').addClass('is-danger');
+		toast('danger', 'Mohon masukkan alamat surel anda');
+		return;
+	} else {
+		$('#textEmail').removeClass('is-danger');
+	}
+
+	// check gender
+	const gender = 'm';
+	if($('#radioJenisKelamin2').prop('checked') == true) gender = 'f';
+
+	// check agency
+	const agency = $('#textInstansi').val();
+	if(agency == '') {
+		$('#textInstansi').addClass('is-danger');
+		toast('danger', 'Mohon masukkan asal instansi anda');
+		return;
+	} else {
+		$('#textInstansi').removeClass('is-danger');
+	}
+
+	// check address
+	const address = $('#textAlamat').val();
+
+	// check contact
+	const telephone = $('#textTelepon').val();
+	if(telephone == '') {
+		$('#textTelepon').addClass('is-danger');
+		toast('danger', 'Mohon masukkan nomor telepon anda');
+		return;
+	} else {
+		$('#textTelepon').removeClass('is-danger');
+	}
+
+	// check participant
+	const guruCount = ($('#textGuruCount').val() == '') ? 0 : $('#textGuruCount').val();
+	const siswaCount = ($('#textSiswaCount').val() == '') ? 0 : $('#textSiswaCount').val();
+	if((guruCount == 0) && (siswaCount == 0)) {
+		$('#textGuruCount').addClass('is-danger');
+		$('#textSiswaCount').addClass('is-danger');
+		toast('danger', 'Mohon masukkan jumlah peserta (minimal 1)');
+		return;
+	} else {
+		$('#textGuruCount').removeClass('is-danger');
+		$('#textSiswaCount').removeClass('is-danger');
+	}
+
+	// check visit date
+	let tanggalPelaksanaan = $('#inputTanggalPelaksanaan').val();
+	if(tanggalPelaksanaan == '') {
+		$('#inputTanggalPelaksanaan').addClass('is-danger');
+		toast('danger', 'Mohon masukkan tanggal pelaksanaan');
+		return;
+	} else {
+		$('#inputTanggalPelaksanaan').removeClass('is-danger');
+		const reformatDate = new Date(tanggalPelaksanaan);
+		tanggalPelaksanaan = reformatDate.getFullYear() + '-' + (reformatDate.getMonth() + 1) + '-' + reformatDate.getDate();
+	}
+
+	// check visit time
+	let getWaktuPelaksanaan = $('#inputWaktuPelaksanaan').val().split(' - ');
+	const waktuPelaksanaanStart = getWaktuPelaksanaan[0];
+	const waktuPelaksanaanEnd = getWaktuPelaksanaan[1];
+	if((waktuPelaksanaanStart == '') || (waktuPelaksanaanEnd == '')) {
+		$('#inputWaktuPelaksanaan').addClass('is-danger');
+		toast('danger', 'Mohon masukkan waktu pelaksanaan');
+		return;
+	} else {
+		$('#inputWaktuPelaksanaan').removeClass('is-danger');
+	}
+
+	// check necessity
+	var necessity = $('#selectKeperluan').val();
+	if(necessity == 'Pilih keperluan...') {
+		$('#selectKeperluanFrame').addClass('is-danger');
+		toast('danger', 'Mohon pilih keperluan anda');
+		return;
+	} else {
+		$('#selectKeperluanFrame').removeClass('is-danger');
+	}
+
+	// perform query
+	if(name && email && gender && agency && telephone && tanggalPelaksanaan && waktuPelaksanaanStart && waktuPelaksanaanEnd && necessity) {
+		new Promise(resolve => {
+			$('#btnFormuliTamuDaftar').addClass('is-loading');
+			resolve();
+		}).then( _ => {
+			new Promise(resolve => {
+				$.ajax({
+					url: base_url + 'formulir/upload',
+					method: 'POST',
+					dataType: 'json',
+					data: {
+						name: name,
+						email: email,
+						gender: gender,
+						agency: agency,
+						address: address,
+						telephone: telephone,
+						teacherCount: guruCount,
+						studentCount: siswaCount,
+						visitDate: tanggalPelaksanaan,
+						visitTimeStart: waktuPelaksanaanStart,
+						visitTimeEnd: waktuPelaksanaanEnd,
+						necessity: necessity
+					},
+					success: response => {
+						if(response.success) {
+							$('#cardFrameInput').fadeOut( _ => {
+								$('#cardFrameSuccess').fadeIn( _ => {
+									new Promise(resolve => {
+										$('#textNama').val(null);
+										$('#textEmail').val(null);
+										$('#textInstansi').val(null);
+										$('#textAlamat').val(null);
+										$('#textTelepon').val(null);
+										$('#textGuruCount').val(null);
+										$('#textSiswaCount').val(null);
+										if(datePicker[0]) datePicker[0].clear();
+										if(timePicker[0]) timePicker[0].clear();
+										$('#selectKeperluan').val('Pilih keperluan...');
+										resolve();
+									}).then( _ => {
+										setTimeout( _ => {
+											$('#cardFrameSuccess').fadeOut( _ => {
+												$('#cardFrameInput').fadeIn( _ => {
+													$('#cardFrameInputScroll').animate({ scrollTop: 0 }, 500);
+													$('#btnFormuliTamuDaftar').removeClass('is-loading');
+												});
+											});
+										}, 2500);
+									});
+								});
+							});
+						} else {
+							toast('danger', 'Terjadi kesalahan saat mengunggah data');
+						}
+					},
+					error: response => {
+						console.log('ERROR | ' + response.status);
+						toast('danger', 'Terjadi kesalahan saat mengunggah data');
+					}
+				});
+				resolve();
+			}).then( _ => {
+				setTimeout( _ => {
+					$('#btnFormuliTamuDaftar').removeClass('is-loading');
+				}, 1000);
+			});
+		});
+	}
+};
+
+const toast = async (type = 'is-info', msg) => {
 	if(!msg) return;
 	switch(type) { case 'success': type = 'is-success'; break; case 'danger': type = 'is-danger'; break;  }
 	bulmaToast.toast({ message: msg, type: type, dismissible: true, animate: { in: 'fadeIn', out: 'fadeOut' } });
-}
+};
 
-function openModalContohSurat() {
+const openModalContohSurat = async _ => {
 	$('#modalContohSurat').addClass('is-active');
-	$('#modalContohSuratBackground').off('click').click(function() { $('#modalContohSurat').fadeOut(function() { $('#modalContohSurat').removeClass('is-active'); $('#modalContohSurat').removeAttr('style'); }); });
-	$('#modalContohSuratClose').off('click').click(function() { $('#modalContohSurat').fadeOut(function() { $('#modalContohSurat').removeClass('is-active'); $('#modalContohSurat').removeAttr('style'); }); });
-}
+	$('#modalContohSuratBackground').off('click').click( _ => { $('#modalContohSurat').fadeOut( _ => { $('#modalContohSurat').removeClass('is-active'); $('#modalContohSurat').removeAttr('style'); }); });
+	$('#modalContohSuratClose').off('click').click( _ => { $('#modalContohSurat').fadeOut( _ => { $('#modalContohSurat').removeClass('is-active'); $('#modalContohSurat').removeAttr('style'); }); });
+};

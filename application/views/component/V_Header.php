@@ -49,6 +49,9 @@
 	<link type="text/css" rel="preload" as="style"
 		href="<?= base_url('assets/css/fontawesome/css/all.min.css'); ?>"
 		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
+	<link type="text/css" rel="preload" as="style"
+		href="<?= base_url('assets/css/animate/animate.min.css'); ?>"
+		onload="javascript:this.onload = null; this.rel = 'stylesheet';">
 	<noscript>
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/bulma/css/bulma.min.css'); ?>">
@@ -66,6 +69,8 @@
 			href="<?= base_url('assets/css/main.css'); ?>">
 		<link type="text/css" rel="stylesheet"
 			href="<?= base_url('assets/css/fontawesome/css/all.min.css'); ?>">
+		<link type="text/css" rel="stylesheet"
+			href="<?= base_url('assets/css/animate/animate.min.css'); ?>">
 	</noscript>
 	<script type="text/javascript">window.base_url = '<?= base_url(); ?>';</script>
 </head>
