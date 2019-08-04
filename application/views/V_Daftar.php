@@ -37,7 +37,7 @@
 </section>
 <div class="container" style="padding-top: 32px; padding-bottom: 32px;">
     <div>
-        <table id="tableDaftarTamu" class="display table is-bordered is-striped is-hoverable is-fullwidth" style="width: 100%;">
+        <table id="tableDaftarTamu" class="display table is-bordered is-striped is-hoverable is-fullwidth">
             <thead>
                 <tr>
                     <th class="has-text-centered" rowspan="2">No.</th>
