@@ -3,4 +3,4 @@
 
 # guestbook
 
-A guestbook app made for BPTIK DIKBUD Jateng.
+A guestbook app made for BPTIK DIKBUD Jateng. Built with [CodeIgniter 3](https://codeigniter.com/).
