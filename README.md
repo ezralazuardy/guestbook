@@ -1,5 +1,4 @@
-[![License](https://img.shields.io/github/license/ezralazuardy/guestbook)](https://github.com/ezralazuardy/guestbook/blob/master/LICENSE) 
-[![Author](https://img.shields.io/badge/author-ezra%20lazuardy-blue.svg)](https://github.com/ezralazuardy) 
+[![License](https://img.shields.io/github/license/ezralazuardy/guestbook)](https://github.com/ezralazuardy/guestbook/blob/master/LICENSE)
 
 # guestbook
 
